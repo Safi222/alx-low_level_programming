@@ -1,26 +1,26 @@
 #include "main.h"
+
 /**
-* _strcmp - compare 2 string
-* @s1:string
-* @s2:strmp
-* Return:int
-* Bwave/ Bright
-*/
+ * _strcmp - comparison
+ * @s1: pointer to the first string
+ * @s2: pointer to the second string
+ * Description: compare the stings
+ *
+ * Return: 0 is equal - if s1 is less if s1 is more
+ */
+
 int _strcmp(char *s1, char *s2)
 {
-	while (((*s1 != '\0') && (*s2 != '\0')) && (*s1 == *s2))
-	{
-		s1++;
-		s2++;
-	}
+	int count1 = 0, areequal = 0;
 
-	if (*s1 == *s2)
+	while (s1[count1] != '\0' && s2[count1] != '\0')
 	{
-		return (0);
+		if (s1[count1] != s2[count1])
+		{
+			areequal = s1[count1] - s2[count1];
+			break;
+		}
+		count1++;
 	}
-
-	else
-	{
-		return (*s1 - *s2);
-	}
+	return (areequal);
 }

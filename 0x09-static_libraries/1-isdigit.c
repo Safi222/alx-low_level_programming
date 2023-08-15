@@ -1,10 +1,16 @@
 #include "main.h"
+
 /**
-* _isdigit - checks for a digit (0 through 9)
-*  @c: int to be checked
-*  Return: 1 if c is a digit, 0 otherwise
-*/
-int _isdigit(int c)
+ * _isdigit - check the code.
+ * @ch: an input character
+ * Description: find upper or nor
+ * Return: 1 when digit 0 otherwise.
+ */
+
+int _isdigit(int ch)
 {
-	return (c >= '0' && c <= '9');
+	if (ch >= '0' && ch <= '9')
+		return (1);
+	else
+		return (0);
 }

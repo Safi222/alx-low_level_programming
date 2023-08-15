@@ -1,18 +1,21 @@
 #include "main.h"
+
 /**
-* _puts - prints a string
-* @str: the string
-*
-* Return: the length of the string
-*/
+ * _puts - print sentence
+ * @str: pointer of array
+ * Descripton: neck hurts
+ *
+ * Return: void
+ */
+
 void _puts(char *str)
 {
-	int i = 0;
+	int count = 0;
 
-	while (str[i] != '\0')
+	while (*(str + count) != '\0')
 	{
-		_putchar(str[i]);
-		i++;
+		_putchar(*(str + count));
+		count++;
 	}
 	_putchar('\n');
 }

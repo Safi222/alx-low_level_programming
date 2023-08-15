@@ -1,10 +1,16 @@
 #include "main.h"
+
 /**
-* _isupper - checks for uppercase character
-* @c: the character to be checked
-* Return: 1 if c is uppercase, 0 otherwise
-*/
-int _isupper(int c)
+ * _isupper - check the code.
+ * @ch: an input character
+ * Description: find upper or nor
+ * Return: 1 when upper 0 otherwise.
+ */
+
+int _isupper(int ch)
 {
-	return (c >= 'A' && c <= 'Z');
+	if (ch >= 'A' && ch <= 'Z')
+		return (1);
+	else
+		return (0);
 }

@@ -1,7 +1,7 @@
-include "main.h"
+#include "main.h"
 
 /**
- * _strncat - conctinate a part only
+ * _strncpy - conctinate a part only
  * @dest: a pointer to destination array
  * @src: a pointer to source array
  * @n: an input integer indicating how much to append
@@ -10,21 +10,23 @@ include "main.h"
  * Return: pointer to source
  */
 
-char *_strncat(char *dest, char *src, int n)
+char *_strncpy(char *dest, char *src, int n)
 {
-	int i = 0, count = 0;
+	int i = 0;
 
-	while (dest[count] != '\0')
+	while (n)
 	{
-		count++;
-	}
-	while (src[i] != '\0' && n)
-	{
-		*(dest + count) = src[i];
+		if (src[i] == '\0')
+			break;
+		*(dest + i) = src[i];
 		i++;
-		count++;
 		n--;
 	}
-	*(dest + count) = '\0';
+	while (n)
+	{
+		*(dest + i) = '\0';
+		i++;
+		n--;
+	}
 	return (dest);
 }

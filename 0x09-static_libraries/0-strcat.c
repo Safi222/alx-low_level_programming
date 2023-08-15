@@ -1,50 +1,28 @@
 #include "main.h"
 
-int get_length(char *s);
-
 /**
-* _strcat - Concatenates the string pointed to by @src,
-* including the terminating null byte,
-* to the end of the string pointed to by @dest.
-* @dest: A pointer to the string to be concatenated upon.
-* @src: The source string to be appended to @dest.
-* Return: A pointer to the destination string @dest.
-*/
+ * _strcat - concatinate
+ * @dest: pointer to destinaion array
+ * @src: pointer to sourcce array
+ * Description: append src into dest
+ *
+ * Return: pointer to the source
+ */
+
 char *_strcat(char *dest, char *src)
 {
-	int initial_end;
-	int j;
+	int i = 0, count = 0;
 
-	initial_end = get_length(dest);
-	j = 0;
-	while (src[j] != '\0')
+	while (dest[count] != '\0')
 	{
-		dest[initial_end + j] = src[j];
-		j++;
+		count++;
 	}
-	dest[initial_end + j] = '\0';
-
-	return (dest);
-}
-
-/**
-* get_length - returns the length of a string
-* @s: String whose length we wish to determine
-*
-* Return: Length of s
-*/
-int get_length(char *s)
-{
-	int length;
-	int i;
-
-	length = 0;
-	i = 0;
-	while (s[i] != '\0')
+	while (src[i] != '\0')
 	{
-		++length;
+		*(dest + count) = src[i];
 		i++;
+		count++;
 	}
-
-	return (length);
+	*(dest + count) = '\0';
+	return (dest);
 }
